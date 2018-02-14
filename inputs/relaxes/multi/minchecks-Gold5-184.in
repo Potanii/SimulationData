@@ -1,0 +1,34 @@
+&control
+    calculation='relax'
+    restart_mode='from_scratch',
+    pseudo_dir = './',
+    outdir='./outputs',
+    disk_io='high'
+/
+&system
+    ibrav= 1, celldm(1)=20.000000, nat=  5, ntyp= 1,
+    ecutwfc = 30.0, nosym=.true., occupations='smearing',
+    smearing='m-v', degauss=0.025
+/
+&electrons
+    conv_thr =  1.0d-8,
+    mixing_beta = 0.7
+/
+&ions
+    pot_extrapolation='second-order'
+    wfc_extrapolation='second-order'
+    ion_temperature = 'andersen'
+    tempw = 1000
+
+/
+ATOMIC_SPECIES
+ Au  28.086  Au.blyp-d-hgh.UPF
+ATOMIC_POSITIONS bohr
+ Au -1.850840 2.072512 -0.404749
+ Au -0.917515 3.451383 4.251359
+ Au 2.990872 1.411017 0.728099
+ Au 4.280450 3.780143 5.511401
+ Au 7.633959 1.621499 2.613992
+K_POINTS
+ 1
+0.0 0.0 0.0 1.0
