@@ -4,7 +4,7 @@
     pseudo_dir = './',
     outdir='./outputs',
     dt=10,
-    nstep=100,
+    nstep=5000,
     disk_io='high'
 /
 &system
@@ -14,7 +14,9 @@
 /
 &electrons
     conv_thr =  1.0d-8,
-    mixing_beta = 0.7
+    mixing_beta = 0.7,
+    scf_must_converge=.false.,
+    electron_maxstep=500
 /
 &ions
     pot_extrapolation='second-order'
