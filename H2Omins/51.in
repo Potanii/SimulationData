@@ -1,0 +1,31 @@
+&control
+    calculation='scf'
+    pseudo_dir = './',
+    outdir='./outputs',
+    disk_io='high'
+/
+&system
+    ibrav= 1, celldm(1)=5.600570, nat=  3, ntyp= 2,
+    ecutwfc = 30.0, nosym=.true., occupations='smearing',
+    smearing='m-v', degauss=0.025
+/
+&electrons
+    conv_thr =  1.0d-8,
+    mixing_beta = 0.7
+/
+&ions
+    pot_extrapolation='second-order'
+    wfc_extrapolation='second-order'
+    ion_temperature = 'andersen'
+
+/
+ATOMIC_SPECIES
+ H  1.01  H.blyp-hgh.UPF
+ O  16.0  O.blyp-hgh.UPF
+ATOMIC_POSITIONS bohr
+ H 0.064188 0.816732 -0.647019
+ H 0.038194 -0.910555 -0.495254
+ O -0.057737 0.046390 0.702871
+K_POINTS
+ 1
+0.0 0.0 0.0 1.0
