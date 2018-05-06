@@ -11,7 +11,7 @@ set -x
 
 #move to working directory
 
-mkdir ../SCF-H2O-1000-out
+mkdir ../SCf-H2O-1000-out
 
 
 #run program
@@ -5015,3 +5015,7 @@ mpirun -np $SLURM_NTASKS pw.x -i ../SCF-H2O-1000-in/4996.in > ../SCf-H2O-1000-ou
 mpirun -np $SLURM_NTASKS pw.x -i ../SCF-H2O-1000-in/4997.in > ../SCf-H2O-1000-out/4997.out
 mpirun -np $SLURM_NTASKS pw.x -i ../SCF-H2O-1000-in/4998.in > ../SCf-H2O-1000-out/4998.out
 mpirun -np $SLURM_NTASKS pw.x -i ../SCF-H2O-1000-in/4999.in > ../SCf-H2O-1000-out/4999.out
+
+
+
+mv ../SCf-H2O-1000-out ../SCF-H2O-1000-out
