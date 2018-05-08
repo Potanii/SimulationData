@@ -9,7 +9,7 @@ module load QuantumEspresso/6.0.0
 #echo commands to stdout
 set -x
 
-mkdir H2Omins-SCF-out
+mkdir ../H2Omins-SCF-out
 
 #run program
 mpirun -np 28 pw.x -i ../H2Omin-MD.in > ../H2Omin-MD.out
