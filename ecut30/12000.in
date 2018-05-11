@@ -1,0 +1,30 @@
+&control
+    calculation='scf'
+    pseudo_dir = '../pslibrary/pbe/PSEUDOPOTENTIALS/',
+    outdir='./outputs',
+    disk_io='high'
+/
+&system
+    ibrav= 1, celldm(1)=20.0, nat=  3, ntyp= 2,
+    ecutwfc = 30.0, nosym=.true., occupations='smearing',
+    smearing='m-v', degauss=0.025
+/
+&electrons
+    conv_thr =  1.0d-8,
+    mixing_beta = 0.7
+/
+&ions
+    pot_extrapolation='second-order'
+    wfc_extrapolation='second-order'
+    ion_temperature = 'andersen'
+
+/
+ATOMIC_SPECIES
+ H  1.01  H.pbe-rrkjus_psl.1.0.0.UPF
+ O  16.0  O.pbe-n-rrkjus_psl.1.0.0.UPF
+ATOMIC_POSITIONS angstrom
+ O 0.023616 0.039725 0.053561
+ H 0.670661 -0.644407 -0.479244
+ H -1.044783 0.015093 0.565961
+K_POINTS {automatic}
+ 1 1 1 0 0 0
