@@ -4,7 +4,7 @@
 #SBATCH -N 1
 #SBATCH --ntasks-per-node 28
 
-module load QuantumEspresso/6.0.0
+module load QuantumEspresso/6.2.1
 
 #echo commands to stdout
 set -x
