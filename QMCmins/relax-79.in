@@ -1,0 +1,33 @@
+&control
+    calculation='relax',
+    restart_mode='from_scratch',
+    pseudo_dir = '../',
+    outdir='./outputs',
+    disk_io='high'
+/
+&system
+    ibrav= 1, celldm(1)=20.000000, nat=  3, ntyp= 2,
+    ecutwfc = 90.0, nosym=.true., occupations='smearing',
+    smearing='m-v', degauss=0.025
+/
+&electrons
+    conv_thr =  1.0d-8,
+    mixing_beta = 0.7
+/
+&ions
+    pot_extrapolation='second-order'
+    wfc_extrapolation='second-order'
+    ion_temperature = 'andersen'
+    tempw = 100
+
+/
+ATOMIC_SPECIES
+ H  1.01  H.blyp-hgh.UPF
+ O  16.0  O.blyp-hgh.UPF
+ATOMIC_POSITIONS angstrom
+ H -0.481532 -0.699180 -0.540988
+ H -0.161763 0.853087 -0.309569
+ O 0.040608 -0.009715 0.112726
+K_POINTS
+ 1
+0.0 0.0 0.0 1.0
